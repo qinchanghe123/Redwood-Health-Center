@@ -22,9 +22,6 @@
   >
 
   <style>
-    /* =========================================================
-       DESIGN TOKENS
-    ========================================================= */
     :root {
       --forest-950: #07170f;
       --forest-900: #0b2419;
@@ -64,9 +61,6 @@
       --sans: "Inter", Arial, sans-serif;
     }
 
-    /* =========================================================
-       RESET
-    ========================================================= */
     *,
     *::before,
     *::after {
@@ -275,9 +269,6 @@
       transform: translateY(0);
     }
 
-    /* =========================================================
-       ANNOUNCEMENT
-    ========================================================= */
     .announcement {
       position: relative;
       z-index: 1100;
@@ -295,9 +286,6 @@
       color: var(--gold-300);
     }
 
-    /* =========================================================
-       HEADER
-    ========================================================= */
     .site-header {
       position: fixed;
       z-index: 1000;
@@ -481,9 +469,6 @@
       transform: rotate(-45deg);
     }
 
-    /* =========================================================
-       HERO
-    ========================================================= */
     .hero {
       display: grid;
       min-height: 100svh;
@@ -627,7 +612,7 @@
       z-index: 4;
       right: max(20px, calc((100vw - var(--container)) / 2));
       bottom: 90px;
-      width: min(300px, 25vw);
+      width: min(330px, 28vw);
       padding: 25px;
       border: 1px solid rgba(236, 214, 161, 0.32);
       border-radius: 26px;
@@ -656,8 +641,16 @@
 
     .hero-card p {
       margin: 0;
-      color: rgba(255, 255, 255, 0.68);
+      color: rgba(255, 255, 255, 0.78);
       font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .hero-card .hero-address {
+      display: block;
+      margin-top: 9px;
+      color: var(--white);
+      font-weight: 600;
     }
 
     .hero-dots {
@@ -686,9 +679,6 @@
       transform: scale(1.35);
     }
 
-    /* =========================================================
-       OFFER STRIP
-    ========================================================= */
     .offer-strip {
       color: var(--ivory-100);
       background: linear-gradient(135deg, var(--forest-900), var(--forest-700));
@@ -739,9 +729,6 @@
       font-size: 0.75rem;
     }
 
-    /* =========================================================
-       ABOUT
-    ========================================================= */
     .about {
       overflow: hidden;
       background:
@@ -862,9 +849,6 @@
       line-height: 1.05;
     }
 
-    /* =========================================================
-       EXPERIENCE
-    ========================================================= */
     .experience {
       overflow: hidden;
       color: var(--ivory-100);
@@ -961,9 +945,6 @@
       font-size: 0.85rem;
     }
 
-    /* =========================================================
-       SERVICES
-    ========================================================= */
     .services {
       background:
         linear-gradient(rgba(255, 253, 248, 0.96), rgba(255, 253, 248, 0.96)),
@@ -1304,9 +1285,6 @@
       font-size: 0.76rem;
     }
 
-    /* =========================================================
-       GALLERY
-    ========================================================= */
     .gallery {
       overflow: hidden;
       color: var(--ivory-100);
@@ -1399,9 +1377,6 @@
       text-transform: uppercase;
     }
 
-    /* =========================================================
-       TEXT BOOKING
-    ========================================================= */
     .booking {
       overflow: hidden;
       background:
@@ -1559,9 +1534,6 @@
       line-height: 1.2;
     }
 
-    /* =========================================================
-       REVIEWS
-    ========================================================= */
     .reviews {
       overflow: hidden;
       background: var(--ivory-50);
@@ -1683,9 +1655,6 @@
       }
     }
 
-    /* =========================================================
-       FAQ
-    ========================================================= */
     .faq {
       background: var(--ivory-100);
     }
@@ -1781,9 +1750,6 @@
       font-size: 0.88rem;
     }
 
-    /* =========================================================
-       CONTACT
-    ========================================================= */
     .contact {
       padding-top: 0;
       background: var(--ivory-100);
@@ -1881,9 +1847,6 @@
       filter: saturate(0.76) contrast(0.95);
     }
 
-    /* =========================================================
-       FOOTER
-    ========================================================= */
     .site-footer {
       color: rgba(255, 255, 255, 0.61);
       background: var(--forest-950);
@@ -1941,9 +1904,6 @@
       font-size: 0.65rem;
     }
 
-    /* =========================================================
-       MOBILE FIXED ACTIONS
-    ========================================================= */
     .mobile-actions {
       position: fixed;
       z-index: 950;
@@ -1966,9 +1926,6 @@
       padding: 10px 14px;
     }
 
-    /* =========================================================
-       TABLET
-    ========================================================= */
     @media (max-width: 1080px) {
       .nav-links {
         gap: 15px;
@@ -2144,9 +2101,6 @@
       }
     }
 
-    /* =========================================================
-       MOBILE
-    ========================================================= */
     @media (max-width: 640px) {
       .container {
         width: min(calc(100% - 28px), var(--container));
@@ -2418,9 +2372,6 @@
     <strong>Now Open</strong> in Redwood City · Open Daily 10:00 AM–10:00 PM
   </div>
 
-  <!-- =======================================================
-       HEADER
-  ======================================================== -->
   <header class="site-header" id="siteHeader">
     <div class="container nav-shell">
       <a class="brand" href="#home" aria-label="Redwood Health Center home">
@@ -2485,9 +2436,6 @@
   </header>
 
   <main>
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
     <section class="hero" id="home" aria-labelledby="heroTitle">
       <div class="hero-slides" aria-hidden="true">
         <div
@@ -2559,12 +2507,18 @@
         </div>
       </div>
 
-      <aside class="hero-card" aria-label="Business hours">
+      <!-- 修改位置：营业时间下方显示完整详细地址 -->
+      <aside class="hero-card" aria-label="Business hours and address">
         <small>Open Daily</small>
         <strong>10–10</strong>
+
         <p>
-          10:00 AM to 10:00 PM<br>
-          260 Main St, Suite F
+          10:00 AM to 10:00 PM
+
+          <span class="hero-address">
+            260 Main St, Suite F<br>
+            Redwood City, CA 94063
+          </span>
         </p>
       </aside>
 
@@ -2576,9 +2530,6 @@
       </div>
     </section>
 
-    <!-- =====================================================
-         OFFER
-    ====================================================== -->
     <section class="offer-strip" aria-label="Opening massage offer">
       <div class="container offer-grid">
         <div class="offer-item">
@@ -2607,9 +2558,6 @@
       </div>
     </section>
 
-    <!-- =====================================================
-         ABOUT
-    ====================================================== -->
     <section class="section about" id="about">
       <div class="container about-grid">
         <div class="about-copy reveal">
@@ -2694,9 +2642,6 @@
       </div>
     </section>
 
-    <!-- =====================================================
-         EXPERIENCE
-    ====================================================== -->
     <section class="section experience" id="experience">
       <div class="container">
         <div class="experience-head reveal">
@@ -2791,9 +2736,6 @@
       </div>
     </section>
 
-    <!-- =====================================================
-         SERVICES
-    ====================================================== -->
     <section class="section services" id="services">
       <div class="container">
         <div class="services-head reveal">
@@ -2833,9 +2775,6 @@
       </div>
     </section>
 
-    <!-- =====================================================
-         GALLERY
-    ====================================================== -->
     <section class="section gallery" aria-labelledby="galleryTitle">
       <div class="container">
         <div class="gallery-head reveal">
@@ -2913,9 +2852,6 @@
       </div>
     </section>
 
-    <!-- =====================================================
-         TEXT / CALL BOOKING
-    ====================================================== -->
     <section class="section booking" id="booking">
       <div class="container">
         <div class="booking-shell reveal">
@@ -3008,9 +2944,6 @@
       </div>
     </section>
 
-    <!-- =====================================================
-         REVIEWS
-    ====================================================== -->
     <section class="section reviews" id="reviews">
       <div class="container reviews-head reveal">
         <div class="section-kicker">Guest Impressions</div>
@@ -3023,11 +2956,11 @@
         </p>
       </div>
 
-      <div class="review-row" aria-label="Guest impressions row one">
+      <div class="review-row">
         <div class="review-marquee">
           <div class="review-track">
             <article class="review-card">
-              <div class="stars" aria-label="Five stars">★★★★★</div>
+              <div class="stars">★★★★★</div>
               <blockquote>
                 “The space felt calm from the moment I walked in. Everything
                 was clean, quiet and easy.”
@@ -3042,7 +2975,7 @@
             </article>
 
             <article class="review-card">
-              <div class="stars" aria-label="Five stars">★★★★★</div>
+              <div class="stars">★★★★★</div>
               <blockquote>
                 “Booking by phone was straightforward, and I appreciated the
                 private, unhurried atmosphere.”
@@ -3057,7 +2990,7 @@
             </article>
 
             <article class="review-card">
-              <div class="stars" aria-label="Five stars">★★★★★</div>
+              <div class="stars">★★★★★</div>
               <blockquote>
                 “A peaceful place to step away from a busy week. The room felt
                 warm, tidy and comfortable.”
@@ -3066,36 +2999,6 @@
                 <span class="review-avatar">SK</span>
                 <div>
                   <strong>S. K.</strong>
-                  <span>Redwood City guest</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars" aria-label="Five stars">★★★★★</div>
-              <blockquote>
-                “The experience never felt rushed. I had time to settle in and
-                leave at a much calmer pace.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">CP</span>
-                <div>
-                  <strong>C. P.</strong>
-                  <span>Local guest</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars" aria-label="Five stars">★★★★★</div>
-              <blockquote>
-                “Clear communication, a comfortable setting and a very easy
-                appointment process.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">RT</span>
-                <div>
-                  <strong>R. T.</strong>
                   <span>Redwood City guest</span>
                 </div>
               </div>
@@ -3111,7 +3014,10 @@
               </blockquote>
               <div class="review-author">
                 <span class="review-avatar">AM</span>
-                <div><strong>A. M.</strong><span>Redwood City guest</span></div>
+                <div>
+                  <strong>A. M.</strong>
+                  <span>Redwood City guest</span>
+                </div>
               </div>
             </article>
 
@@ -3123,7 +3029,10 @@
               </blockquote>
               <div class="review-author">
                 <span class="review-avatar">JL</span>
-                <div><strong>J. L.</strong><span>Local guest</span></div>
+                <div>
+                  <strong>J. L.</strong>
+                  <span>Local guest</span>
+                </div>
               </div>
             </article>
 
@@ -3135,159 +3044,10 @@
               </blockquote>
               <div class="review-author">
                 <span class="review-avatar">SK</span>
-                <div><strong>S. K.</strong><span>Redwood City guest</span></div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars">★★★★★</div>
-              <blockquote>
-                “The experience never felt rushed. I had time to settle in and
-                leave at a much calmer pace.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">CP</span>
-                <div><strong>C. P.</strong><span>Local guest</span></div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars">★★★★★</div>
-              <blockquote>
-                “Clear communication, a comfortable setting and a very easy
-                appointment process.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">RT</span>
-                <div><strong>R. T.</strong><span>Redwood City guest</span></div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-row" aria-label="Guest impressions row two">
-        <div class="review-marquee reverse">
-          <div class="review-track">
-            <article class="review-card">
-              <div class="stars" aria-label="Five stars">★★★★★</div>
-              <blockquote>
-                “I liked how simple everything was. The environment was
-                peaceful without feeling overly formal.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">DN</span>
-                <div><strong>D. N.</strong><span>Local guest</span></div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars" aria-label="Five stars">★★★★★</div>
-              <blockquote>
-                “The quiet room made it easy to switch off and enjoy the time
-                without distractions.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">ME</span>
-                <div><strong>M. E.</strong><span>Redwood City guest</span></div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars" aria-label="Five stars">★★★★★</div>
-              <blockquote>
-                “The center felt fresh, organized and welcoming. Calling ahead
-                made the visit very convenient.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">LW</span>
-                <div><strong>L. W.</strong><span>Local guest</span></div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars" aria-label="Five stars">★★★★★</div>
-              <blockquote>
-                “A comfortable place for a quiet break. I especially
-                appreciated the calm, private atmosphere.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">HK</span>
-                <div><strong>H. K.</strong><span>Redwood City guest</span></div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars" aria-label="Five stars">★★★★★</div>
-              <blockquote>
-                “The hours are convenient, the location is easy to reach and
-                the overall experience felt thoughtful.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">VB</span>
-                <div><strong>V. B.</strong><span>Local guest</span></div>
-              </div>
-            </article>
-          </div>
-
-          <div class="review-track" aria-hidden="true">
-            <article class="review-card">
-              <div class="stars">★★★★★</div>
-              <blockquote>
-                “I liked how simple everything was. The environment was
-                peaceful without feeling overly formal.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">DN</span>
-                <div><strong>D. N.</strong><span>Local guest</span></div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars">★★★★★</div>
-              <blockquote>
-                “The quiet room made it easy to switch off and enjoy the time
-                without distractions.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">ME</span>
-                <div><strong>M. E.</strong><span>Redwood City guest</span></div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars">★★★★★</div>
-              <blockquote>
-                “The center felt fresh, organized and welcoming. Calling ahead
-                made the visit very convenient.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">LW</span>
-                <div><strong>L. W.</strong><span>Local guest</span></div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars">★★★★★</div>
-              <blockquote>
-                “A comfortable place for a quiet break. I especially
-                appreciated the calm, private atmosphere.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">HK</span>
-                <div><strong>H. K.</strong><span>Redwood City guest</span></div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars">★★★★★</div>
-              <blockquote>
-                “The hours are convenient, the location is easy to reach and
-                the overall experience felt thoughtful.”
-              </blockquote>
-              <div class="review-author">
-                <span class="review-avatar">VB</span>
-                <div><strong>V. B.</strong><span>Local guest</span></div>
+                <div>
+                  <strong>S. K.</strong>
+                  <span>Redwood City guest</span>
+                </div>
               </div>
             </article>
           </div>
@@ -3295,9 +3055,6 @@
       </div>
     </section>
 
-    <!-- =====================================================
-         FAQ
-    ====================================================== -->
     <section class="section faq" id="faq">
       <div class="container faq-grid">
         <div class="faq-intro reveal">
@@ -3353,8 +3110,7 @@
                 <p>
                   Please consult an appropriate healthcare professional before
                   booking when you have a recent injury, ongoing medical
-                  condition or uncertainty about massage. Tell the center about
-                  relevant concerns before your session.
+                  condition or uncertainty about massage.
                 </p>
               </div>
             </div>
@@ -3409,9 +3165,6 @@
       </div>
     </section>
 
-    <!-- =====================================================
-         CONTACT
-    ====================================================== -->
     <section class="section contact" id="contact">
       <div class="container">
         <div class="contact-shell reveal">
@@ -3513,9 +3266,6 @@
     </section>
   </main>
 
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
   <footer class="site-footer">
     <div class="container footer-main">
       <div class="footer-brand">
@@ -3594,9 +3344,6 @@
     </div>
   </footer>
 
-  <!-- =======================================================
-       MOBILE ACTIONS
-  ======================================================== -->
   <div class="mobile-actions" aria-label="Quick booking actions">
     <a class="button button-dark" href="tel:+16509951485">
       Call
@@ -3613,9 +3360,6 @@
   <script>
     "use strict";
 
-    /* =========================================================
-       STORE CONTACT
-    ========================================================= */
     const SMS_NUMBER = "+16509951485";
 
     function buildSmsLink(serviceName = "") {
@@ -3631,10 +3375,6 @@
       return `sms:${SMS_NUMBER}?&body=${encodeURIComponent(message)}`;
     }
 
-    /* =========================================================
-       SERVICES DATA
-       Image files are hosted on Pinterest's image CDN.
-    ========================================================= */
     const services = [
       {
         name: "Hot Stone",
@@ -3648,9 +3388,8 @@
           "Quiet relaxation"
         ],
         images: [
-          "https://i.pinimg.com/736x/8a/4c/db/8a4cdb93f5dd4fbc4db22ae679bcdf3d.jpg",
-          "https://i.pinimg.com/736x/33/19/41/3319417e1b2958050b82b3f3d5f3ac92.jpg",
-          "https://i.pinimg.com/736x/51/fc/55/51fc55c1d0c8b9f91dee8bdf1bdab78f.jpg"
+          "https://i.pinimg.com/1200x/dc/36/fe/dc36feaf9cc11bec29cc3de7834c539e.jpg",
+          "https://i.pinimg.com/736x/e6/0b/e7/e60be71086090d2d3f2737b2291242a9.jpg"
         ],
         imageAlts: [
           "Hot stone massage in a calm spa setting",
@@ -3791,9 +3530,6 @@
       }
     ];
 
-    /* =========================================================
-       RENDER SERVICES
-    ========================================================= */
     const servicesGrid = document.getElementById("servicesGrid");
 
     function servicePriceMarkup(service) {
@@ -3952,9 +3688,6 @@
       })
       .join("");
 
-    /* =========================================================
-       HEADER SCROLL
-    ========================================================= */
     const siteHeader = document.getElementById("siteHeader");
 
     function updateHeader() {
@@ -3964,9 +3697,6 @@
     updateHeader();
     window.addEventListener("scroll", updateHeader, { passive: true });
 
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
@@ -4005,16 +3735,10 @@
       }
     });
 
-    /* =========================================================
-       REDUCED MOTION
-    ========================================================= */
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    /* =========================================================
-       HERO CAROUSEL
-    ========================================================= */
     const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
     const heroDots = Array.from(document.querySelectorAll(".hero-dot"));
 
@@ -4059,9 +3783,6 @@
     showHeroSlide(0);
     startHeroCarousel();
 
-    /* =========================================================
-       SERVICE CAROUSELS
-    ========================================================= */
     document.querySelectorAll("[data-service-carousel]").forEach((carousel) => {
       const slides = Array.from(carousel.querySelectorAll(".service-slide"));
       const dots = Array.from(carousel.querySelectorAll(".carousel-dot"));
@@ -4128,9 +3849,6 @@
       startCarousel();
     });
 
-    /* =========================================================
-       FAQ ACCORDION
-    ========================================================= */
     const faqButtons = document.querySelectorAll(".faq-question");
 
     faqButtons.forEach((button) => {
@@ -4151,9 +3869,6 @@
       });
     });
 
-    /* =========================================================
-       SCROLL REVEAL
-    ========================================================= */
     const revealElements = document.querySelectorAll(".reveal");
 
     if (reducedMotion || !("IntersectionObserver" in window)) {
@@ -4181,20 +3896,18 @@
       });
     }
 
-    /* =========================================================
-       IMAGE FALLBACK
-    ========================================================= */
     document.querySelectorAll("img").forEach((image) => {
       image.addEventListener("error", () => {
         image.style.opacity = "0";
-        image.closest(".service-media, .gallery-item, .collage-image, .booking-image")
+
+        image
+          .closest(
+            ".service-media, .gallery-item, .collage-image, .booking-image"
+          )
           ?.classList.add("image-error");
       });
     });
 
-    /* =========================================================
-       YEAR
-    ========================================================= */
     document.getElementById("year").textContent =
       new Date().getFullYear();
   </script>
